@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+    pre_build:
+        command:
+            - npm install
+    build:
+        command:
+            - ng build
