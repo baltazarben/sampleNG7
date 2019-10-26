@@ -2,8 +2,8 @@ version: 0.2
 
 phases:
     pre_build:
-        command:
+        commands:
             - npm install
     build:
-        command:
+        commands:
             - ng build
