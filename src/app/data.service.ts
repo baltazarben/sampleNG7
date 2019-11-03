@@ -13,12 +13,8 @@ export class DataService {
   }
   
   addCustomerSNS(postObject) {
-	  
-	  return this.http.post('https://pnm4eje0ti.execute-api.us-west-2.amazonaws.com/test/customertopic', postObject,{headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }});
-	  
-	  /**
-	  return this.http.post('https://pnm4eje0ti.execute-api.us-west-2.amazonaws.com/test/customertopic', postObject,{headers: new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'})});
-	  */
-	}
+	
+return this.http.post('https://pnm4eje0ti.execute-api.us-west-2.amazonaws.com/test/customertopic', postObject, {headers: {'Content-Type': 'application/json','Authorization':'None', 'Access-Control-Allow-Origin':'*'}});	
+  }
 	
 }
