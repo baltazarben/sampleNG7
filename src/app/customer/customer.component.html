@@ -1,0 +1,44 @@
+<h1>Customer</h1>
+
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+
+  <h5 *ngIf="success">Your form is valid! {{ postObject}}</h5>
+  
+   <label>
+    Customer ID:
+    <input type="text" formControlName="customer_id">
+    <div *ngIf="submitted && customerForm.controls.customer_id.errors" class="error">
+      <div *ngIf="customerForm.controls.customer_id.errors.required">ID is required, bro.</div>
+    </div>
+  </label>
+
+  <label>
+    Customer Name:
+    <input type="text" formControlName="customer_name">
+    <div *ngIf="submitted && customerForm.controls.customer_name.errors" class="error">
+      <div *ngIf="customerForm.controls.customer_name.errors.required">Name is required, bro.</div>
+    </div>
+  </label>
+
+  <label>
+    Customer Location:
+    <input type="text" formControlName="customer_loc">
+    <div *ngIf="submitted && customerForm.controls.customer_loc.errors" class="error">
+      <div *ngIf="customerForm.controls.customer_loc.errors.required">Location is required, bro.</div>
+    </div>
+  </label>
+
+  <input type="submit" value="Add Customer" class="cta">
+
+</form>
+
+<div *ngIf="submitted" class="results">
+  <strong>ID:</strong>
+  <span>{{ customerForm.controls.customer_id.value }}</span>
+  
+    <strong>Name:</strong>
+  <span>{{ customerForm.controls.customer_name.value }}</span>
+
+  <strong>Location:</strong> 
+  <span>{{ customerForm.controls.customer_loc.value }}</span>
+</div>

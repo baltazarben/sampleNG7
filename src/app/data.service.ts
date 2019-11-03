@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +7,18 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
   constructor(private http: HttpClient) { }
-
-  getUsers() {
+  
+   getUsers() {
     return this.http.get('https://reqres.in/api/users')
   }
+  
+  addCustomerSNS(postObject) {
+	  
+	  return this.http.post('https://pnm4eje0ti.execute-api.us-west-2.amazonaws.com/test/customertopic', postObject,{headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }});
+	  
+	  /**
+	  return this.http.post('https://pnm4eje0ti.execute-api.us-west-2.amazonaws.com/test/customertopic', postObject,{headers: new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'})});
+	  */
+	}
+	
 }
