@@ -36,8 +36,10 @@ export class CustomerComponent implements OnInit {
 	var cust_loc = this.customerForm.value.customer_loc;
 	this.postObject = '{"topic": "arn:aws:sns:us-west-2:473950938629:angular7Customer", ' + 
 	'"subject": "Add customer from angular 7", ' +
-    '"message": "{\"customer_id\": \"' + cust_id + '\", \"customer_name\": \"' + cust_name + '\", \"customer_location\": \"' + cust_loc + '\"}"}';
+    '"message": "{\\"customer_id\\": \\"' + cust_id + '\\", \\"customer_name\\": \\"' + cust_name + '\\", \\"customer_location\\": \\"' + cust_loc + '\\"}"}';
 	
+	
+
 	this.data.addCustomerSNS(this.postObject).subscribe(
        success => alert("Done"),
        error => alert(error)
